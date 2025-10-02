@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dash.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para los íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="contenedor-body">
+    <div class="navbar">
+      <!-- IZQUIERDA -->
+      <div class="nav-left">
+        <div class="icon icon-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">GroseryApp</div>
+        <div class="icono-logo"> <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt="Logo"></div>
+      </div>
+
+      <!-- CENTRO -->
+      <div class="nav-center">
+        <input type="text" placeholder="Buscar productos...">
+      </div>
+
+      <!-- DERECHA -->
+      <div class="nav-right">
+        <div class="menu">
+          <a href="{{ url_for('productos') }}" class="active">Productos</a>
+          <a href="{{ url_for('Categorias') }}">Categorias</a>                    
+          <a href="{{ url_for('Pedidos') }}">Pedidos</a>
+        </div>
+        <div class="icons">
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <div class="profile-menu">
+            <i class="fas fa-user-circle"></i>
+            <ul class="dropdown">
+            <li><a href="{{ url_for('perfil') }}">Mi perfil</a></li>
+            <li><a href="#">Configuración</a></li>
+            <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contenedor principal -->
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul>
+          <li class="active">📊 Dashboard</li>
+          
+          
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main">
+        <div class="grid-2">
+          <div class="card">
+            <h2>Ingresos</h2>
+            <p class="money">COP 7.852.000</p>
+            <p class="green">↑ 2.1% vs Última semana</p>
+            <small>Ventas desde 1-12 Dic, 2025</small>
+            <canvas id="barChart"></canvas>
+          </div>
+
+          <div class="card">
+            <h3>Hora de compras</h3>
+            <canvas id="donutChart"></canvas>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Tus Calificaciones</h3>
+            <div class="bubble-container">
+              <div class="bubble purple">95%<br><span>Precio</span></div>
+              <div class="bubble blue">92%<br><span>Atención</span></div>
+              <div class="bubble orange">85%<br><span>Buena calidad</span></div>
+            </div>
+          </div>
+
+          <div class="card orders">
+            <h3>Lo más pedido</h3>
+            <ul>
+              <li><span>Aceite vivi</span> COP 7.000</li>
+              <li><span>Coca Cola 1LT</span> COP 3.600</li>
+              <li><span>Arroz de Diana</span> COP 2.500</li>
+              <li><span>Maggi desmenuzado</span> COP 500</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pedidos</h3>
+          <p class="money">2.568</p>
+          <p class="red">↓ 2.1% vs semana pasada</p>
+          <small>Ventas desde 1-6 Dic, 2025</small>
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="#">Soporte</a>
+      <a href="#">Protección de datos</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="#">¿Quiénes somos?</a>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

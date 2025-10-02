@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo_productos.css') }}">
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <!-- IZQUIERDA -->
+            <div class="nav-left">
+                <div class="icon icon-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">GroseryApp</div>
+                <div class="icono-logo"> <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt="Logo"></div>
+            </div>
+
+            <!-- CENTRO -->
+            <div class="nav-center">
+                <a href="#"></a><input type="text" placeholder="Buscar productos...">
+            </div>
+            <!-- DERECHA -->
+            <div class="nav-right">
+                <div class="menu">
+                    <a href="{{ url_for('productos') }}" class="active">Productos</a>
+                    <a href="{{ url_for('Categorias') }}">Categorias</a>                    
+                    <a href="{{ url_for('Pedidos') }}">Pedidos</a>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{ url_for('dashb') }}"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <main></main>
+        <!-- Contenedor anuncios -->
+        <div class="contenedor-anuncios">
+            <div>
+                <div class="carrusel-box">
+                    <ul>
+                        <li>
+                            <img src="Anuncios/anuncio-postobon.jpg" alt="Anucio postobon">
+                        </li>
+                        <li>
+                            <img src="Anuncios/anuncio-papas-margaritas.jpg_large" alt="Anuncio papas margaritas">
+                        </li>
+                        <li>
+                            <img src="Anuncios/anuncio-cocola.png" alt="Anuncio cocacola">
+                        </li>
+                        <li>
+                            <img src="Anuncios/anuncio-alqueria.jpeg" alt="Anuncio alqueria">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="anuncio-dos">
+                    <img src="Anuncios/Anuncio pinpop.png" alt="Anuncio Pinpop">
+                </div>
+            </div>
+        </div>
+
+        <div class="contenido">
+            <!-- Contenedor productos -->
+            <div class="contenedor-productos">
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="/Aceite diana 900ml.webp" alt="Aceite Diana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aceite Diana 900ml</h2>
+                        <p class="precio">$9,200 COP</p>
+                        <a href="{{ url_for('producto') }}"><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/AGUACATE.jpg" alt="Agucate">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aguacate 1ud</h2>
+                        <p class="precio">$5,000 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Ajo.jpg" alt="Ajo">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Ajo 1ud</h2>
+                        <p class="precio">$200 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Arroz diana 500g.webp" alt="Arroz Diana 500 Gramos">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Arroz Diana 500Gr</h2>
+                        <p class="precio">$2,400 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    {% for producto in productos %}
+                    <figure>
+                        <img id="itm" src="{{ producto[3] }}" alt="Big cola 2.2 litros">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>{{ producto[1] }}</h2>
+                        <p class="precio">{{ producto[2] }} COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/BOM-BOM-BUM-FRESA.webp" alt="Bom bom bum fresa roja">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Bom bom bum 1ud</h2>
+                        <p class="precio">$500 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/bon yurt zucaritas 170gr.jpg" alt="Bon yurt alpina">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Bom Yurt Alpina Zucaritas 170Gr</h2>
+                        <p class="precio">$4,200 COP</p>
+                        <a><button>Dettalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/bubalu.jpg" alt="Chicle bubalu">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Bubbaloo 1ud</h2>
+                        <p class="precio">$200 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/cebolla.jpg" alt="Cebolla roja">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Cebolla 1ud</h2>
+                        <p class="precio">$500 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Galletas festival.webp" alt="Galletas festival vainilla">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Galletas Festival Vainilla</h2>
+                        <p class="precio">$1,500 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Gaseosa-Coca-Cola-regular-3L.webp" alt="Gaseosa coca-cola 3 litros">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Gaseosa Coca-Cola 3Lt </h2>
+                        <p class="precio">$5,200 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/jamón Zenu 230g.jpg" alt="Jamó zenú 230 Gramos">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Jamón Zenú 230Gr</h2>
+                        <p class="precio">$11,000 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Leche colanta 1L.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Leche Colanta Delactosada 1Lt</h2>
+                        <p class="precio">$3,400 COP</p>
+                        <a><button>Detalles</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/LIMÓN.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Limón 1ud</h2>
+                        <p class="precio">$200 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Mortadela rica 450g.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Mortadela Rica 450Gr</h2>
+                        <p class="precio">$9,600 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Aceite girasol premier 500ml.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aceite Girasol Premier 500ml</h2>
+                        <p class="precio">$18,900 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Arroz florhuila 500g.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Arroz Florhuila 500Gr</h2>
+                        <p class="precio">$2,300 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Cebollin.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Cebollin 1ud</h2>
+                        <p class="precio">$300 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/maracuya.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Maracuya Libra</h2>
+                        <p class="precio">$1,700 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Yogo yogo mora vaso 150g.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Yogo Ygo Mora Vaso 150Gr</h2>
+                        <p class="precio">$2,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Pinpop.png" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Pinpop 1ud</h2>
+                        <p class="precio">$400 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Aceite riquisimo 1900ml.png" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aceite Riquisimo 1900ml</h2>
+                        <p class="precio">$20,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Tomate.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Tomate 1ud</h2>
+                        <p class="precio">$500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Suero costeño 400gr.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Suero Costeño 400Gr</h2>
+                        <p class="precio">$5,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Sprite 400ml.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Gaseosa Sprite 400ml</h2>
+                        <p class="precio">$2,500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Aceite riquisimo 250ml.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aceite Riquisimo 250ml</h2>
+                        <p class="precio">$3,500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Arroz sabroson 500g.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Arroz Sabroson 500Gr</h2>
+                        <p class="precio">$2,300 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/GASEOSA_MANZANA_POSTOBON_PERSONAL_400ML.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Gaseosa Postobon 400ml</h2>
+                        <p class="precio">$2,400 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Sparkies.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Sparkies 1ud</h2>
+                        <p class="precio">$300 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/SALCHICHA-RANCHERA 115g.png" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Salchicjas Ranchera 115Gr</h2>
+                        <p class="precio">$5,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Aceite vivi 500ml.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Aceite Vivi 500ml</h2>
+                        <p class="precio">$5,200 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/salchichon-zenu-x-900 cervero.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Salchichon Cerveroni Zenú 900Gr</h2>
+                        <p class="precio">$19,500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/ARROZ-BLANCO-LEOPARDO-500g.webp" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Arroz Leopardo 500Gr</h2>
+                        <p class="precio">$2,300 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/leche-alqueria-entera-alquelitro-1L.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Leche Alqueria Entera 1Lt</h2>
+                        <p class="precio">$4,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Lechuga.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Lechuga</h2>
+                        <p class="precio">$700 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Manzana.avif" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Manzana 1ud</h2>
+                        <p class="precio">$3,500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Pony malta mini 200ml.png" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Gaseosa Pony Malta Mini 200ml</h2>
+                        <p class="precio">$2,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Pera.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Pera 1ud</h2>
+                        <p class="precio">$3,500 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/ARROZBLANCO-x500g-DELCOSTAL.png" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Arroz Delcostal 500Gr</h2>
+                        <p class="precio">$2,200 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+                <div class="items">
+                    <figure>
+                        <img id="itm" src="Items/Salchichon zenu polli 250g.jpg" alt="Aceite Diaana">
+                    </figure>
+                    <div class="informacion-producto">
+                        <h2>Salchichon Pollo Zenú 250Gr</h2>
+                        <p class="precio">$7,000 COP</p>
+                        <a><button>Detalle</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#">Soporte</a>
+            <a href="#">Protección de datos</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">¿Quiénes somos?</a>
+        </div>
+    </div>
+</body>
+</html>

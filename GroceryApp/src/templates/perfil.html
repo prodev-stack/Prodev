@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="funciones.js" defer></script>
+</head>
+<body>
+  <div class="contenedor-body">
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <!-- IZQUIERDA -->
+      <div class="nav-left">
+        <div class="icon-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo">GroseryApp</div>
+        <div class="icono-logo">
+          <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt="Logo de GroseryApp">
+        </div> 
+      </div>
+      <!-- CENTRO -->
+      <div class="nav-center">
+        <input type="text" placeholder="Buscar productos...">
+      </div>
+      <!-- DERECHA -->
+      <div class="nav-right">
+        <div class="menu">
+          <a href="{{ url_for('productos') }}" class="active">Productos</a>
+          <a href="{{ url_for('Categorias') }}">Categorias</a>                    
+          <a href="{{ url_for('Pedidos') }}">Pedidos</a>
+        </div>
+        <div class="icons">
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a href="{{ url_for('dashb') }}"><i class="fas fa-user-circle"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📄 CONTENIDO PRINCIPAL -->
+    <main>
+      <div class="profile-container">
+        <form class="profile-form">
+          <h3>Información Personal</h3>
+          
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre">
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" placeholder="ejemplo@correo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" placeholder="+57 300 000 0000">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Nueva contraseña</label>
+            <input type="password" id="password" placeholder="********">
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="save-btn">Guardar cambios</button>
+            <a href="/dashboard/dashb.html" class="cancel-btn">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a href="#">Soporte</a>
+      <a href="#">Protección de datos</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="#">¿Quiénes somos?</a>
+    </footer>
+  </div>  
+</body>
+</html>

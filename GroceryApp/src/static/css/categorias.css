@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    margin: 0%;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background-image: url('/src/static/logo app/Fondo_categorias.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(4px);
+    
+}
+.contenedor-body{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1E3A8A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* IZQUIERDA */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-left .logo {
+    font-weight: bold;
+}
+.icono-logo img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CENTRO */
+.nav-center input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: center;
+    width: 250px;
+}
+.nav-center input::placeholder {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+/* DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap:15px;
+    align-items: center;
+}
+
+.menu a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #F97316;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ICONOS */
+.icons a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* ÍCONO MENÚ HAMBURGUESA */
+.icon-menu {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #F97316;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* CONTENIDO */
+.contenido {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+/* GRID DE TARJETAS */
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    ;
+}
+
+.card {
+    height:300px;
+    background: #fff;
+    border: 0px solid #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 5px 8px 5px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.card p {
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    background: #f9fafb;
+    font-size: 1.1rem;
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f97316;
+}

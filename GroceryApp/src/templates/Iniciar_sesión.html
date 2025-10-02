@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroceryApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Estilo_inicioSesión.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="logo-container">
+                <div class="logo-icon">🛒</div>
+                <div class="logo-text">GroceryApp</div>
+            </div>
+
+            <div class="auth-content">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+                <!-- LOGIN PAGE -->
+                <div class="page active" id="login">
+                    <h1 class="auth-title">GroceryApp</h1>
+                    <p class="auth-subtitle">Inicia sesión para continuar</p>
+                    
+                    <form method="POST" action="{{ url_for('login') }}">
+                        <div class="form-group">
+                            <div class="input-icon">👤</div>
+                            <input type="email" name="correo_electronico_login" class="form-input" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">🔒</div>
+                            <input type="password" name="contrasena_login" class="form-input" placeholder="Contraseña" required>
+                        </div>
+                        <button type="submit" class="auth-button">inicio de sesión</button>
+                        
+                    </form>
+
+                    <div class="divider">
+                        <span>o</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <div class="social-button">
+                            <span>G</span> Google
+                        </div>
+                        <div class="social-button">
+                            <span>f</span> Facebook
+                        </div>
+                    </div>
+
+                    <div class="auth-links">
+                        <p>¿No tienes cuenta? <span class="link" onclick="showPage('register')">Regístrate aquí</span></p>
+                        <p><span class="link" onclick="showPage('support')">¿Necesitas ayuda?</span></p>
+                    </div>
+
+                    <div class="terms">
+                        Al usar nuestro servicio, aceptas nuestros términos de servicio y política de privacidad.
+                    </div>
+                </div>
+
+                <!-- REGISTER PAGE -->
+                <div class="page" id="register">
+                    <h1 class="auth-title">Crear Cuenta</h1>
+                    <p class="auth-subtitle">Únete a GroceryApp hoy</p>
+                    
+                    <form method="POST" action="{{ url_for('register') }}">
+                        <div class="form-group">
+                            <div class="input-icon">👤</div>
+                            <input type="text" name="nombre_completo" class="form-input" placeholder="Nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">📧</div>
+                            <input type="email" name="correo_electronico" class="form-input" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">📱</div>
+                            <input type="tel" name="numero_telefono" class="form-input" placeholder="Número de teléfono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">🔒</div>
+                            <input type="password" name="contrasena" class="form-input" placeholder="Contraseña" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-icon">🔒</div>
+                            <input type="password" name="confirmar_contrasena" class="form-input" placeholder="Confirmar contraseña" required>
+                        </div>
+                        
+                        <button type="submit" class="auth-button">Crear cuenta</button>
+                    </form>
+
+                    <div class="divider">
+                        <span>o</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <div class="social-button">
+                            <span>G</span> Google
+                        </div>
+                        <div class="social-button">
+                            <span>f</span> Facebook
+                        </div>
+                    </div>
+
+                    <div class="auth-links">
+                        <p>¿Ya tienes cuenta? <span class="link" onclick="showPage('login')">Inicia sesión</span></p>
+                        <p><span class="link" onclick="showPage('support')">¿Necesitas ayuda?</span></p>
+                    </div>
+
+                    <div class="terms">
+                        Al crear una cuenta, aceptas nuestros términos de servicio y política de privacidad.
+                    </div>
+                </div>
+
+                <!-- SUPPORT PAGE -->
+                <div class="page" id="support">
+                    <div class="support-content">
+                        <h1 class="auth-title">Centro de Ayuda</h1>
+                        <p class="auth-subtitle">¿Cómo podemos ayudarte?</p>
+                        
+                        <div class="support-options">
+                            <div class="support-option">
+                                <div class="support-icon">💬</div>
+                                <div class="support-info">
+                                    <h3>Chat en vivo</h3>
+                                    <p>Habla con nuestro equipo de soporte</p>
+                                </div>
+                            </div>
+                            
+                            <div class="support-option">
+                                <div class="support-icon">📧</div>
+                                <div class="support-info">
+                                    <h3>Enviar email</h3>
+                                    <p>Envíanos tu consulta por correo</p>
+                                </div>
+                            </div>
+                            
+                            <div class="support-option">
+                                <div class="support-icon">📞</div>
+                                <div class="support-info">
+                                    <h3>Llamar ahora</h3>
+                                    <p>+57 1 234 5678 (Lun-Vie 9am-6pm)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="support-option">
+                                <div class="support-icon">❓</div>
+                                <div class="support-info">
+                                    <h3>Preguntas frecuentes</h3>
+                                    <p>Encuentra respuestas rápidas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                <div class="input-icon">👤</div>
+                                <input type="text" class="form-input" placeholder="Tu nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">📧</div>
+                                <input type="email" class="form-input" placeholder="Tu correo electrónico" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">💭</div>
+                                <textarea class="form-input" placeholder="Describe tu problema o consulta..." rows="4" required style="padding-top: 20px; resize: vertical;"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="auth-button">Enviar consulta</button>
+                        </form>
+
+                        <div class="auth-links">
+                            <p><span class="link" onclick="showPage('login')">← Volver al inicio de sesión</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="clouds">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+            </div>
+
+            <div class="hero-content">
+                <h2 class="hero-title">Nuevos productos</h2>
+                <p class="hero-subtitle">Explora las últimas tendencias</p>
+                
+                <div class="store-illustration">
+                    <div class="store">
+                        <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt="#">
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <div class="feature-text">Envíos<br>rápidos</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-text">Pagos<br>seguros</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">↩️</div>
+                        <div class="feature-text">Devoluciones<br>fáciles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+        }
+
+
+        // Support options click handlers
+        document.querySelectorAll('.support-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const title = this.querySelector('h3').textContent;
+                alert(`Abriendo ${title}...`);
+            });
+        });
+    </script>
+</body>
+</html>.

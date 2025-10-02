@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pedidos.css') }}">
+</head>
+<body>
+    <div class="contenedor-body">
+        <div class="navbar">
+            <!-- IZQUIERDA -->
+             <div class="nav-left">
+                <div class="icon-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">GroseryApp</div>
+                <div class="icono-logo"> <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt=""></div>
+            </div>
+            <!-- CENTRO -->
+             <div class="nav-center">
+                <a href="#"></a><input type="text" placeholder="Buscar productos...">
+            </div>
+            <!-- DERECHA -->
+             <div class="nav-right">
+                <div class="menu">
+                    <a href="{{ url_for('productos') }}" class="active">Productos</a>
+                    <a href="{{ url_for('Categorias') }}">Categorias</a>                    
+                    <a href="{{ url_for('Pedidos') }}">Pedidos</a>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class= "fas fa-shopping-cart"></i></a>
+                    <a href="{{ url_for('dashb') }}"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--HISTORIAL DE COMPRAS-->    
+        <div class="contenido historial">
+            <h2>Historial De Compras</h2>
+            
+            <!--pedido 1-->
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">25/12/2024</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Aceite Girasol Premier 1.5L</h3>
+                            <p> $21.000.00 COP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pedido-footer">
+                    <span>Total: $21.000.00 COP</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--pedido 1-->
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">10/01/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Pan Blanco Bimbo</h3>
+                            <p>$7.200 COP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pedido-footer">
+                    <span>Total: 7.200 COP</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedido-card">
+                    <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">22/02/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Lenteja Diana 500Gr</h3>
+                            <p>$4.800 COP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pedido-footer">
+                    <span>Total: 4.800</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pedido-card">
+            <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">26/04/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Pimeton Rojo</h3>
+                            <p>$5.900 COP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pedido-footer">
+                    <span>Total: 5.900</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">31/06/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Ponque Bimbo Casero</h3>
+                            <p> $5.100 COP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pedido-footer">
+                    <span>Total: $5.100 COP</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">5/07/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Jabon AntiBacterial Protex</h3>
+                            <p> $14.900 COP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pedido-footer">
+                    <span>Total: $14.900</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">25/08/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Leche Deslactosada 1Lt</h3>
+                            <p> $5.500 COP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pedido-footer">
+                    <span>Total: $5.500 COP</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pedido-card">
+                <div class="pedido-header">
+                    <span class="tienda">GroseryApp</span>
+                    <span class="fecha">10/07/2025</span>
+                </div>
+                <div class="pedido-body">
+                    <div class="producto-info">
+                        <div class="producto-detalle">
+                            <h3>Papa Sin lavar</h3>
+                            <p> $1.000 COP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pedido-footer">
+                    <span>Total: $1.000 COP</span>
+                    <div class="acciones">
+                        <button class="btn-borrar">Borrar</button>
+                        <button class="btn-repetir">Añadir De Nuevo</button>
+                    </div>
+                </div>
+            </div>
+        </div>     
+
+        <div class="contenido"></div>
+
+        <!-- FOOTER -->
+         <footer class="footer">
+            <a href="#">Soporte</a>
+            <a href="#">Protección de datos</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">¿Quiénes somos?</a>
+         </footer>
+    </div>
+</body>
+</html>

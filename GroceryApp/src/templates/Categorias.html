@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/categorias.css') }}">
+</head>
+<body>
+    <div class="contenedor-body">
+        <div class="navbar">
+            <!-- IZQUIERDA -->
+            <div class="nav-left">
+                <div class="icon-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">GroseryApp</div>
+                <div class="icono-logo"> <img src="{{ url_for('static', filename='logo app/LogoApp.png') }}" alt=""></div>
+            
+            </div>
+            <!-- CENTRO -->
+            <div class="nav-center">
+                <a href="#"></a><input type="text" placeholder="Buscar productos...">
+            </div>
+            <!-- DERECHA -->
+             <div class="nav-right">
+                <div class="menu">
+                    <a href="{{ url_for('productos') }}" class="active">Productos</a>
+                    <a href="{{ url_for('Categorias') }}">Categorias</a>                    
+                    <a href="{{ url_for('Pedidos') }}">Pedidos</a>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{ url_for('dashb') }}"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main>
+            <div class="contenido">
+                <div class="grid-categorias">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Alimentos">
+                        <p>Alimentos</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://blog.machinepoint.com/wp-content/uploads/2023/09/soft-drinks.jpg" alt="bebidas">
+                        <p>bebidas</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://tn.com.ar/resizer/v2/lacteos-foto-freepik-CZDJXB4ROBE6NPNP25PWMDTDAE.jpg?auth=102fbceac9b6bdd823d09bd99f9a302805243b4278971627ff8a2d4c89dbc864&width=767" alt="Lacteos">
+                        <p>Lacteos</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://www.escucoibiza.com/content/IMG_0674.jpg" alt="Embutidos">
+                        <p>Embutidos</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://cuidateplus.marca.com/sites/default/files/styles/ratio_43/public/cms/2023-05/aceiteolivagirasol.jpg.webp?itok=c-hxgoFh" alt="Aceites">
+                        <p>Aceites</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.ecestaticos.com/m7hxsPtKStU8_LnrnQHP12uzKoI=/115x0:2001x1413/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F98e%2F7ff%2F9d6%2F98e7ff9d66c187adcfb4d1611c1e1428.jpg" alt="Productos frescos">
+                        <p>Productos frescos</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://voz.ucad.edu.mx/wp-content/uploads/2019/05/dulces.jpg" alt="dulces">
+                        <p>dulces</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/27397555/pexels-photo-27397555.jpeg" alt="Otros producto">
+                        <p>Otros productos</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- FOOTER -->
+         <footer class="footer">
+            <a href="#">Soporte</a>
+            <a href="#">Protección de datos</a>
+            <a href="#">Ayuda</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">¿Quiénes somos?</a>
+         </footer>
+    </div>
+</body>
+</html>

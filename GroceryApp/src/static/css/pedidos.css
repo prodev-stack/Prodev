@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    margin: 0%;
+    height: 100%;
+    flex-direction: column;    
+}
+.contenedor-body{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1E3A8A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* IZQUIERDA */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-left .logo {
+    font-weight: bold;
+}
+.icono-logo img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CENTRO */
+.nav-center input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: center;
+    width: 250px;
+}
+
+/* DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #F97316;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ICONOS */
+.icons a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* ÍCONO MENÚ HAMBURGUESA */
+.icon-menu {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #F97316;
+}
+
+
+/* CONTENIDO CENTRAL */
+.contenido {
+    min-height: calc(100vh -120px);/*ocupa el espacio sin chocar con el navbar/footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f97316;
+}
+
+
+/*Historial De pedidos*/
+
+.historial{
+    flex-direction: column;
+    padding: 20px;
+    align-items: center
+}
+
+.historial h2{
+    margin-bottom: 20px;
+    color: #1E3A8A;
+    text-align: center;
+
+}
+
+.pedido-card{
+    width: 80%;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pedido-header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.pedido-header .fecha{
+    color: #666;
+    font-weight: normal;
+}
+
+.pedidos-body{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.producto-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.producto-detalle h3{
+    margin: 0;
+    font-size: 1rem;
+    color: #1E3A8A;
+}
+
+.producto-detalle p{
+    margin: 0;
+    color: #444;
+}
+
+.pedido-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.acciones{
+    display: flex;
+    gap: 10px;
+}
+
+.btn-borrar, .btn-repetir{
+    border: 2px solid #1E3A8A;
+    background: transparent;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3 ease;
+}
+
+.btn-borrar:hover{
+    background: #f97316;
+    color: fff;
+    border-color: #f97316;
+}
+
+.btn-repetir{
+    border: 2px solid #f97316;
+    color: #1E3A8A;
+
+}
+
+.btn-repetir:hover{
+    background: #f97316;
+    color: #fff;
+}

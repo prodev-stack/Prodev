@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    margin: 0%;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1E3A8A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* IZQUIERDA */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left .logo {
+    font-weight: bold;
+}
+
+.icono-logo img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CENTRO (barra búsqueda) */
+.nav-center input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    width: 250px;
+    margin: center;
+}
+
+/* DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #F97316;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ICONOS */
+.icons a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* ÍCONO MENÚ HAMBURGUESA */
+.icon-menu {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #F97316;
+}
+
+
+/* CONTENIDO CENTRAL */
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f97316;
+}
+
+/* Contenedor anuncios */
+.contenedor-anuncios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carrusel-box{
+    width: 500px;
+    height: auto;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+.carrusel-box ul{
+    display: flex;
+    width: 400%;
+    padding: 0;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+.carrusel-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.carrusel-box img{
+    width: 100%;
+}
+@keyframes slide{
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -300%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+.anuncio-dos{
+    width: 500px;
+    margin-left: 20px;
+}
+
+/* Contenedor productos */
+img{
+    max-width: 100%;
+}
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    overflow: hidden;
+}
+.items{
+    background-color: white;
+}
+.items figure{
+    overflow: hidden;
+}
+#itm{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: all .5s;
+}
+.items img{
+    width: 500px;
+    object-fit: cover;
+    transition: all .5s;
+}
+.informacion-producto{
+    padding: 15px 30px;
+    line-height: 2;
+}
+.informacion-producto h2{
+    font-size: 15px;
+}
+.precio{
+    font-size: 15px;
+    font-weight: 900;
+}
+.informacion-producto button{
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: #E5E7EB;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.items:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+.items:hover img{
+    transform: scale(1.2);
+}
+
+.items {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.informacion-producto {
+    padding: 15px 20px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.informacion-producto h2 {
+    font-size: 15px;
+    flex-grow: 1; /* hace que el título ocupe el espacio sobrante */
+}
+
+.informacion-producto p {
+    font-weight: bold;
+    margin: 8px 0 16px 0; /* espacio fijo entre precio y botón */
+}
+
+.informacion-producto button {
+    margin-top: auto; /* empuja el botón hacia el fondo */
+}

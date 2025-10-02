@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    margin: 0%;
+    height: 100%;
+    flex-direction: column;    
+}
+.contenedor-body{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1E3A8A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* IZQUIERDA */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-left .logo {
+    font-weight: bold;
+}
+.icono-logo img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CENTRO */
+.nav-center{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  right: 100px;
+}
+
+.nav-center input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: center;
+    width: 250px;
+}
+.nav-center input::placeholder{
+  text-align: center;
+}
+
+/* DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #F97316;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ICONOS */
+.icons a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* ÍCONO MENÚ HAMBURGUESA */
+.icon-menu {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #F97316;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Contenedor principal */
+.profile-container {
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.profile-container h3 {
+  margin-bottom: 20px;
+  color: #1E3A8A;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: #1E3A8A;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #163273;
+}
+
+.cancel-btn {
+  background: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.cancel-btn:hover {
+  background: #e0e0e0;
+}
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f97316;
+}

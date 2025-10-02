@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    margin: 0%;
+    height: 100%;
+    flex-direction: column;
+}
+.contenedor-body{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1E3A8A;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* IZQUIERDA */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-left .logo {
+    font-weight: bold;
+}
+.icono-logo img{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* CENTRO */
+.nav-center input {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: center;
+    width: 250px;
+}
+
+/* DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #F97316;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ICONOS */
+.icons a {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* ÍCONO MENÚ HAMBURGUESA */
+.icon-menu {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icons a:hover {
+    color: #F97316;
+}
+
+/* ESTILO COMENTARIOS */
+.nueva-reseña, .lista-reseñas {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nueva-reseña h2, .lista-reseñas h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.calificacion {
+  color: #f39c12; /* Color de estrellas */
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+.reseña {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.reseña:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.info-reseña {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre imagen y texto */
+  margin-bottom: 10px;
+}
+
+#formulario-reseña label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#formulario-reseña input,
+#formulario-reseña textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+#formulario-reseña button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#formulario-reseña button:hover {
+  background-color: #0056b3;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Imagen circular */
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.estrellas {
+    display: flex;
+    gap: 5px;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.estrellas .fa-star.seleccionada,
+.estrellas .fa-star:hover,
+.estrellas .fa-star:hover ~ .fa-star {
+    color: #f39c12;
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f97316;
+}
